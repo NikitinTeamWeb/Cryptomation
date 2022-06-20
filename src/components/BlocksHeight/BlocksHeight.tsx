@@ -35,16 +35,16 @@ const BlocksHeight: FC<IProps> = ({ children }) => {
 
   const renderHeight = () => {
     childrenRef.current.map((item) => {
-      item.style.height = 'auto';
-      if (item.offsetHeight > heightBlock) {
-        setHeightBlock(item.offsetHeight);
+      (item as HTMLElement).style.height = 'auto';
+      if ((item as HTMLElement).offsetHeight > heightBlock) {
+        setHeightBlock((item as HTMLElement).offsetHeight);
       }
     });
   };
 
   useEffect(() => {
     childrenRef.current.map((item) => {
-      return (item.style.height = heightBlock + 'px');
+      return ((item as HTMLElement).style.height = heightBlock + 'px');
     });
   }, [heightBlock, width]);
 
