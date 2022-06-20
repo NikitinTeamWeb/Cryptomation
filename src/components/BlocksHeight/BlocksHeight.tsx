@@ -35,8 +35,14 @@ const BlocksHeight: FC<IProps> = ({ children }) => {
 
   const renderHeight = () => {
     childrenRef.current.map((item) => {
+      // eslint-disable-next-line @typescript-eslint/bon-ts-comment
+      //@ts-ignore
       item.style.height = 'auto';
+      // eslint-disable-next-line @typescript-eslint/bon-ts-comment
+      //@ts-ignore
       if (item.offsetHeight > heightBlock) {
+        // eslint-disable-next-line @typescript-eslint/bon-ts-comment
+        //@ts-ignore
         setHeightBlock(item.offsetHeight);
       }
     });
