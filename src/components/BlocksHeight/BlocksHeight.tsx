@@ -50,6 +50,8 @@ const BlocksHeight: FC<IProps> = ({ children }) => {
 
   useEffect(() => {
     childrenRef.current.map((item) => {
+      // eslint-disable-next-line @typescript-eslint/bon-ts-comment
+      //@ts-ignore
       return (item.style.height = heightBlock + 'px');
     });
   }, [heightBlock, width]);
@@ -57,7 +59,11 @@ const BlocksHeight: FC<IProps> = ({ children }) => {
   return (
     <>
       {React.Children.map(children, (child, index) =>
+        // eslint-disable-next-line @typescript-eslint/bon-ts-comment
+        //@ts-ignore
         React.cloneElement(child, {
+          // eslint-disable-next-line @typescript-eslint/bon-ts-comment
+          //@ts-ignore
           ref: (ref) => (childrenRef.current[index] = ref),
         })
       )}
